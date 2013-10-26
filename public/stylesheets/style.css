@@ -6,3 +6,18 @@ body {
 a {
   color: #00B7FF;
 }
+
+#compare-chart {
+  width: 65%;
+  float: left;
+}
+
+#ad-space {
+  width: 35%;
+  float: right;
+}
+
+.ad {
+  margin-top: 30px;
+  font-size: 12px;
+}
