@@ -9,6 +9,11 @@ a {
   color: #00B7FF;
 }
 
+#state-compare-chart {
+  width: 65%;
+  float: left;
+}
+
 #compare-chart {
   width: 65%;
   float: left;
