@@ -35,3 +35,21 @@ a {
   padding-top: 20px;
   padding-bottom: 20px;
 }
+
+ul
+{
+list-style-type:none;
+margin:0;
+padding:0;
+}
+
+li
+{
+display:inline;
+padding-right: 20px;
+}
+
+li a
+{
+  text-decoration: none;
+}
