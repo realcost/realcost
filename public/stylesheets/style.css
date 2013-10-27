@@ -53,3 +53,13 @@ li a
 {
   text-decoration: none;
 }
+
+input[type=text]
+{
+   float: right
+}
+
+textarea
+{
+   float: right
+}

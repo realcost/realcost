@@ -1,7 +1,7 @@
 extends layout
 
 block content
-  img(src='images/banner.png',width='1100')
+  img(src='images/awesome_logo.jpg',width='1100')
   
   #state-compare-chart
     h2 Cost of Hip Replacement by States
@@ -11,7 +11,8 @@ block content
     h2 Cost of Procedures in Puget Sound Region
     <script type='text/javascript' src='http://public.tableausoftware.com/javascripts/api/viz_v1.js'></script><div class='tableauPlaceholder' style='width: 634px; height: 769px;'><noscript><a href='http:&#47;&#47;seattletimes.com&#47;html&#47;localpages&#47;2021188804_hospital-interactive.html'><img alt='Dashboard 1 ' src='http:&#47;&#47;public.tableausoftware.com&#47;static&#47;images&#47;6S&#47;6STNF2XJQ&#47;1_rss.png' style='border: none' /></a></noscript><object class='tableauViz' width='634' height='769' style='display:none;'><param name='host_url' value='http%3A%2F%2Fpublic.tableausoftware.com%2F' /> <param name='path' value='shared&#47;6STNF2XJQ' / > <param name='toolbar' value='yes' /><param name='static_image' value='http:&#47;&#47;public.tableausoftware.com&#47;static&#47;images&#47;6S&#47;6STNF2XJQ&#47;1.png' / > <param name='animate_transition' value='yes' /><param name='display_static_image' value='yes' /><param name='display_spinner' value='yes' /><param name='display_overlay' value='yes' /><param name='display_count' value='yes' /></object></div><div style='width:634px;height:22px;padding:0px 10px 0px 0px;color:black;font:normal 8pt verdana,helvetica,arial,sans-serif;'><div style='float:right; padding-right:8px;'><a href='http://www.tableausoftware.com/public/about-tableau-products?ref=http://public.tableausoftware.com/shared/6STNF2XJQ' target='_blank'>Learn About Tableau</a></div></div>
 
-  .ad-space
+  .ad-space(style = 'width:35%; float:right')
+      br
       b Advertising
       .ad
         a(href='http://www.overlakehospital.org/')
@@ -24,11 +25,74 @@ block content
         p
           The Center That Performs The Most Joint Replacements in The Region.
 
-  .community
-    br
-    br
-    img(src='images/share_cost.png',width='650')
+  form#feedbackform(method='post', action='', style = 'width:35%; float:right')
+      br
+      h3     
+          | Share your Experiences  
+      p
+          | Provider 
+          input(type='text', name='Provider', value = 'Mount Valhalla Orthopedics', size = '35')
+      p
+          | Procedure 
+          input(type='text', name='Procedure' value = 'Knee Replacement - Total Left', size = '35')
+      br
+      p
+          | &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+          | 1 
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+          | 2
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+          | 3
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+          | 4
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+          | 5
+      p
+          | Experiences
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+          | Bad
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+          | Great
+      p
+          | &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+          | Scheduling 
+          input(type='range', name='Scheduling', size = '35', min = '1', max = '5', step = '1', value = '4', style = 'float:right; width:240px')
+      p
+          | &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Facilities 
+          input(type='range', name='Facilities', size = '35', min = '1', max = '5', step = '1', value = '2',  style = 'float:right; width:240px')
+      p
+          | &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Physician 
+          input(type='range', name='Physician', size = '35', min = '1', max = '5', step = '1', value = '3',  style = 'float:right; width:240px')
+      p
+          | &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Staff
+          input(type='range', name='Staff', size = '35', min = '1', max = '5', step = '1', value = '1',  style = 'float:right; width:240px')
+      p
+          | &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Day of Service
+          input(type='range', name='DayOfService', size = '35', min = '1', max = '5', step = '1', value = '5', style = 'float:right; width:240px')
+      p
+          | &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Long Term Outcome
+          input(type='range', name='LongTermOutcome', size = '35', min = '1', max = '5', step = '1', style = 'float:right; width:240px')
+      p
+          | &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Do you recommend?
+          input(type='range', name='Recommend', size = '35', min = '1', max = '5', step = '1', style = 'float:right; width:240px')
+      p
+          | Procedure Costs
+      p
+          | &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Charges
+          input(type='text', name='Charges', value = '$ 35,949', size = '15')
+      p
+          | &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Payments
+          input(type='text', name='Payments', value = '$ 17,255', size = '15')
+      p
+          | Comments
+      p
+          textarea(name='Comments', rows = '8', cols = '40')
+            | Took a while to get a surgery date. Staff and facilities were good. Surgeon explained the before and after so I knew what to expect. The surgery went well with a good recovery. And hoorah, I am walking again!
+      br
+      div(style='width:50%; float:right; margin-top:15px')
+         input(type='submit', name='Submit', value='Submit', style = 'margin:0 auto')
+
 
   .footer
     a(href='http://wp.me/p437sb-2',target='_blank')
-      b Blog
+     
